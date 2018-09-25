@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: end2end
+    ports:
+          - "8000:8000"
+    volumes:
+      - ./end-to-end:/app:Z
+    command: bash
+    tty: true
