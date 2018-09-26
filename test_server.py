@@ -28,7 +28,7 @@ PORT=8000
 if len(sys.argv) > 1:
   PORT = int(sys.argv[1])
 
-server_address = ("127.0.0.1", PORT)
+server_address = ("0.0.0.0", PORT)
 
 # ./do.sh testserver generates the file
 DEPS_FILE="build/test_js_deps-runfiles.js"
