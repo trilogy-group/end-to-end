@@ -9,6 +9,6 @@ services:
     ports:
           - "8000:8000"
     volumes:
-      - ./end-to-end:/app:Z
+      - ..:/app:Z
     command: bash
     tty: true
