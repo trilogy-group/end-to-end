@@ -6,8 +6,9 @@ Git and other basic developer tools are available in the image.
 
 # Quick Start
 
-- Unzip `End2End-Docker.zip` in `{project-root-folder}/end2end/`
+- Unzip `End2End-Docker.zip` in `end2end` folder
 - Open a terminal session to that folder
+- Navigate to ```docker``` directory.
 - Run `docker-compose build`
 - Run `docker-compose up -d`
 - Run `docker exec -it end2end bash`
@@ -19,13 +20,9 @@ Git and other basic developer tools are available in the image.
 - When you finish working with the container, type `exit`
 - Run `docker-compose down` to stop the service.
 
-# Work with the Docker Container
-
-Copy this deliverable (`Dockerfile`, `docker-compose.yml`) to `{project-root-folder}/end2end/`
-
 ## Build the image
 
-In `{project-root-folder}/end2end/` folder, run:
+In `end2end/docker` folder, run:
 
 ```bash
 docker-compose build
@@ -35,7 +32,7 @@ This instruction will create a DockerImage in your machine called `end2end_build
 
 ## Run the container
 
-In `{project-root-folder}/end2end/` folder, run:
+In `end2end/docker` folder, run:
 
 ```bash
 docker-compose up -d
@@ -58,11 +55,11 @@ Parameters `-it` allocate an interactive TTY session
 ## docker-compose.yml
 
 The docker-compose.yml file contains a single service: `builder`.
-We will use this service to run end2end from our local environment, so we mount root project dir `./end-to-end` to the a `/app` folder:
+We will use this service to run end2end from our local environment, so we mount root project dir `./end2end` to the a `/app` folder:
 
 ```yaml
     volumes:
-      - ./end-to-end:/app:Z
+      - ..:/app:Z
 ```
 
 ## Requirements
